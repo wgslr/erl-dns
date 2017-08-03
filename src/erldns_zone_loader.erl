@@ -40,7 +40,7 @@ load_zones() ->
       lager:info("Loaded ~p zones", [length(JsonZones)]),
       {ok, length(JsonZones)};
     {error, Reason} ->
-      lager:error("Failed to load zones: ~p", [Reason]),
+      lager:error("Failed to load zones in zone_loader, path: ~p: ~p", [filename(), Reason]),
       {err, Reason}
   end.
 

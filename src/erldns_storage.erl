@@ -173,7 +173,7 @@ load_zones(Filename) when is_list(Filename) ->
       lager:info("Loaded ~p zones", [length(JsonZones)]),
       {ok, length(JsonZones)};
     {error, Reason} ->
-      lager:error("Failed to load zones: ~p", [Reason]),
+      lager:error("Failed to load zones (storage), path: ~p: ~p", [Filename, Reason]),
       {err, Reason}
   end.
 
